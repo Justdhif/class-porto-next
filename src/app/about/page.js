@@ -6,10 +6,9 @@ import { useRef } from "react";
 import StudentSection from "../../components/StudentSection";
 
 export default function About() {
-  const ref1 = useRef(null);
-  const ref2 = useRef(null);
-  const isInView1 = useInView(ref1, { once: false });
-  const isInView2 = useInView(ref2, { once: false });
+  // Gunakan useRef untuk referensi elemen
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: false });
 
   return (
     <div className="bg-gray-50 dark:bg-gray-900 min-h-screen">
@@ -32,14 +31,16 @@ export default function About() {
       </motion.div>
 
       {/* Siapa Kami? */}
-      <motion.div
-        ref={ref1}
-        initial={{ opacity: 0, y: 50 }}
-        animate={isInView1 ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.5 }}
+      <div
+        ref={sectionRef}
         className="w-full flex flex-col md:flex-row items-center justify-around px-6 md:px-20 py-20"
       >
-        <div className="w-full md:w-1/2 text-center md:text-left">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 0.5 }}
+          className="w-full md:w-1/2 text-center md:text-left"
+        >
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white">
             Siapa Kami?
           </h2>
@@ -77,14 +78,13 @@ export default function About() {
               <Send size={16} /> Telegram
             </a>
           </div>
-        </div>
+        </motion.div>
 
         {/* Logo Kelas */}
         <motion.div
-          ref={ref2}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={
-            isInView2 ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
+            isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
           }
           transition={{ duration: 0.5 }}
           className="w-full md:w-1/2 flex justify-center md:justify-end mt-10 md:mt-2"
@@ -95,7 +95,7 @@ export default function About() {
             className="w-40 h-40 md:w-48 md:h-48 object-contain rounded-full border-2 border-blue-600 shadow-md"
           />
         </motion.div>
-      </motion.div>
+      </div>
 
       {/* Student Section */}
       <StudentSection />

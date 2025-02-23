@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { motion, AnimatePresence, useInView } from "framer-motion";
+import { useState } from "react";
+import { motion, useInView } from "framer-motion";
 import {
   MessageCircle,
   Instagram,
@@ -123,63 +123,9 @@ export default function StudentCards() {
       {/* Grid Siswa */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {displayedStudents.length > 0 ? (
-          displayedStudents.map((student, index) => {
-            const ref = useRef(null);
-            const isInView = useInView(ref, { triggerOnce: false });
-
-            return (
-              <motion.div
-                ref={ref}
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                animate={
-                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
-                }
-                transition={{ duration: 0.5 }}
-                className="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden p-6 text-center border border-gray-200 dark:border-gray-700"
-              >
-                <img
-                  src={student.image}
-                  alt={student.name}
-                  className="w-28 h-28 rounded-full mx-auto shadow-md border-2 border-blue-600"
-                />
-                <h3 className="mt-4 text-lg font-semibold text-gray-800 dark:text-white">
-                  {student.name}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  {student.role}
-                </p>
-
-                {/* Kontak Button */}
-                <div className="flex justify-center gap-2 mt-4">
-                  <a
-                    href={student.whatsapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-green-500 hover:bg-green-700 text-white py-1 px-3 rounded-lg flex items-center gap-1 transition-all text-sm"
-                  >
-                    <MessageCircle size={16} /> WhatsApp
-                  </a>
-                  <a
-                    href={student.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-pink-500 hover:bg-pink-700 text-white py-1 px-3 rounded-lg flex items-center gap-1 transition-all text-sm"
-                  >
-                    <Instagram size={16} /> Instagram
-                  </a>
-                  <a
-                    href={student.telegram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-blue-500 hover:bg-blue-700 text-white py-1 px-3 rounded-lg flex items-center gap-1 transition-all text-sm"
-                  >
-                    <Send size={16} /> Telegram
-                  </a>
-                </div>
-              </motion.div>
-            );
-          })
+          displayedStudents.map((student, index) => (
+            <StudentCard key={index} student={student} />
+          ))
         ) : (
           <p className="text-center text-gray-600 dark:text-gray-400">
             Tidak ada siswa yang ditemukan.
