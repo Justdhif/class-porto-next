@@ -61,8 +61,8 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/struktur-kelas" className="hover:text-blue-500">
-                Struktur Kelas
+              <Link href="/gallery" className="hover:text-blue-500">
+                Gallery
               </Link>
             </li>
             <li>

@@ -87,12 +87,17 @@ export default function About() {
             isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
           }
           transition={{ duration: 0.5 }}
-          className="w-full md:w-1/2 flex justify-center md:justify-end mt-10 md:mt-2"
+          className="w-full md:w-1/2 flex justify-center md:justify-end mt-10 md:mt-2 space-x-5"
         >
           <img
-            src="/images/logos/profile.jpg"
+            src="/images/gallery/1.jpg"
             alt="Logo XI RPL 4"
-            className="w-40 h-40 md:w-48 md:h-48 object-contain rounded-full border-2 border-blue-600 shadow-md"
+            className="w-40 h-40 md:w-48 md:h-48 object-cover rounded-full border-2 border-blue-600 shadow-md"
+          />
+          <img
+            src="/images/gallery/2.jpg"
+            alt="Logo XI RPL 4"
+            className="w-40 h-40 md:w-48 md:h-48 object-cover rounded-full border-2 border-blue-600 shadow-md"
           />
         </motion.div>
       </div>
