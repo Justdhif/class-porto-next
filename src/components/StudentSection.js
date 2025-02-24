@@ -58,9 +58,9 @@ const students = [
   name,
   role: `Absen ${index + 1}`,
   image: `/images/student/${index + 1}.jpg`, // Pastikan file gambar tersedia
-  whatsapp: "https://wa.me/628123456789",
-  instagram: "https://instagram.com/example",
-  telegram: "https://t.me/example",
+  whatsapp: "",
+  instagram: "",
+  telegram: "",
 }));
 
 export default function StudentCards() {
@@ -158,7 +158,7 @@ export default function StudentCards() {
               <img
                 src={student.image}
                 alt={student.name}
-                className="w-28 h-28 rounded-full mx-auto shadow-md border-2 border-blue-600"
+                className="w-28 h-28 rounded-full mx-auto shadow-md border-2 border-blue-600 object-cover"
               />
               <h3 className="mt-4 text-lg font-semibold text-gray-800 dark:text-white">
                 {student.name}

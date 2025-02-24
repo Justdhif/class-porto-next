@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Send, Instagram, Mail, Users } from "lucide-react";
-import { motion } from "framer-motion"; // ✅ Import Framer Motion
+import { motion } from "framer-motion";
 import { db } from "../../firebase";
 import {
   collection,
@@ -118,7 +118,7 @@ export default function Contact() {
       {/* Tombol Instagram & Email dengan animasi hover */}
       <div className="flex justify-center space-x-4 mb-6">
         <motion.a
-          href="https://instagram.com/kelas_kita"
+          href=""
           className="bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded-lg flex items-center gap-2 transition"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -126,7 +126,7 @@ export default function Contact() {
           <Instagram size={20} /> Instagram
         </motion.a>
         <motion.a
-          href="mailto:kelas@example.com"
+          href=""
           className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg flex items-center gap-2 transition"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}

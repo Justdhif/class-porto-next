@@ -54,7 +54,7 @@ export default function About() {
           {/* Contact Icons */}
           <div className="mt-4 flex justify-center md:justify-start space-x-6">
             <a
-              href="https://instagram.com/akun_instagram"
+              href=""
               target="_blank"
               rel="noopener noreferrer"
               className="bg-pink-500 hover:bg-pink-700 text-white py-2 px-3 rounded-lg flex items-center gap-1 transition-all text-sm"
@@ -62,7 +62,7 @@ export default function About() {
               <Instagram size={16} /> Instagram
             </a>
             <a
-              href="https://wa.me/628123456789"
+              href=""
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-500 hover:bg-green-700 text-white py-2 px-3 rounded-lg flex items-center gap-1 transition-all text-sm"
@@ -70,7 +70,7 @@ export default function About() {
               <MessageCircle size={16} /> WhatsApp
             </a>
             <a
-              href="https://t.me/akun_telegram"
+              href=""
               target="_blank"
               rel="noopener noreferrer"
               className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-3 rounded-lg flex items-center gap-1 transition-all text-sm"
